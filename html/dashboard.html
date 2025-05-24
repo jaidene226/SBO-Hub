@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./../media/logo2.png" type="image/x-icon" />
+    <title>SBO Hub</title>
+
+    <link rel="stylesheet" href="./../style/root.css" />
+    <link rel="stylesheet" href="./../style/dashboard.css" />
+  </head>
+  <body>
+    <main class="container">
+      <aside class="sidebar">
+        <div class="profile">
+          <img src="./../media/logo1.png" alt="" />
+
+          <div>
+            <h2 id="username"></h2>
+            <p id="student-no"></p>
+          </div>
+        </div>
+
+        <nav id="navbar">
+          <div class="nav-button">
+            <img src="./../media/home.png" alt="" />
+            <p>Home</p>
+          </div>
+
+          <div class="nav-button">
+            <img src="./../media/event.png" alt="" />
+            <p>Events</p>
+          </div>
+
+          <div class="nav-button">
+            <img src="./../media/notif.png" alt="" />
+            <p>Notifications (<span id="notif-count"></span>)</p>
+          </div>
+        </nav>
+
+        <div class="logout" id="logout-btn">
+          <img src="./../media/logout.png" alt="" />
+          <p>Log out</p>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <section class="home" id="home">
+          <h1>SBO Community</h1>
+
+          <section class="post-container"></section>
+        </section>
+
+        <section class="events" id="events">
+          <h1>Events</h1>
+
+          <section class="event-container"></section>
+        </section>
+
+        <section class="notifications" id="notifications">
+          <h1>Notifications</h1>
+
+          <section class="notifications-container"></section>
+        </section>
+      </main>
+    </main>
+
+    <div id="notification-modal" class="modal hidden">
+      <div class="modal-content">
+        <div id="notif-event-details"></div>
+        <div class="modal-actions">
+          <button id="notif-modal-close">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FIREBASE IMPORT -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js"></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js"
+    ></script>
+
+    <script type="module" src="./../script/dashboard.js" defer></script>
+  </body>
+</html>

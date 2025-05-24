@@ -1,0 +1,126 @@
+.home .header,
+.events .content {
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px; */
+  position: relative;
+
+  .slider {
+    position: absolute;
+    right: 0;
+    width: 50px;
+
+    .slider-toggle {
+      cursor: pointer;
+      width: 35px;
+      height: auto;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 30px;
+      right: 0;
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      padding: 5px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+
+      img {
+        width: 30px;
+        margin-right: 12px;
+      }
+    }
+
+    .dropdown button {
+      background: none;
+      border: none;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .dropdown.hidden {
+      display: none;
+    }
+  }
+}
+
+/* .events {
+  position: relative;
+} */
+
+.home,
+.events {
+  position: relative;
+}
+
+.new-post,
+.new-event {
+  position: fixed;
+  bottom: 25px;
+  right: 50px;
+  font-size: 1.5rem;
+  background-color: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--orange-dark);
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+
+  &.hidden {
+    display: none;
+  }
+
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 90dvh;
+    overflow: auto;
+  }
+
+  .modal-content input,
+  .modal-content textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: none;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+}
