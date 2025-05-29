@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./../media/logo2.png" type="image/x-icon" />
+    <title>SBO Hub</title>
+
+    <link rel="stylesheet" href="./../style/root.css" />
+    <link rel="stylesheet" href="./../style/login.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="logo-container">
+        <img src="./../media/logo.png" alt="" />
+      </section>
+
+      <section class="content">
+        <div class="h1-content">
+          <h1>College of Computer Studies</h1>
+          <h1>Siniloan, Campus</h1>
+        </div>
+
+        <form id="register-form" class="form">
+          <div class="input-field">
+            <img src="./../media/user.png" alt="" />
+            <input required type="text" name="username" placeholder="Enter your username" />
+          </div>
+
+          <div class="input-field">
+            <img src="./../media/user.png" alt="" />
+            <input required type="text" name="student-no" placeholder="Enter your student no." />
+          </div>
+
+          <div class="input-field">
+            <img src="./../media/user.png" alt="" />
+            <select required name="course">
+              <option value="" disabled selected>Select your course</option>
+              <option value="BSIT">BSIT</option>
+              <option value="BSCS">BSCS</option>
+              <option value="BSIS">BSIS</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <img src="./../media/user.png" alt="" />
+            <input
+              required
+              type="text"
+              name="year-section"
+              placeholder="Enter your year and section"
+            />
+          </div>
+
+          <div class="input-field">
+            <img src="./../media/lock.png" alt="" />
+            <input required type="password" name="password" placeholder="Enter your password" />
+          </div>
+
+          <div class="input-field">
+            <img src="./../media/keyhole.png" alt="" />
+            <input required type="password" name="c-password" placeholder="Confirm your password" />
+          </div>
+
+          <button type="submit">Register</button>
+        </form>
+
+        <div class="register">
+          <p>Already have an account?</p>
+          <a href="./login.html">Login</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FIREBASE IMPORT -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js"></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js"
+    ></script>
+
+    <script type="module" src="./../script/register.js" defer></script>
+  </body>
+</html>

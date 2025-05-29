@@ -1,0 +1,19 @@
+:root {
+  --font-family-base: Arial, sans-serif;
+  --orange: #ff9600;
+  --maroon: #750e20;
+  --gray: rgb(190, 190, 190);
+  --orange-dark: #e68a00;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-base);
+  margin: 0;
+  padding: 0;
+}

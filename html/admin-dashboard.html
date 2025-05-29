@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./../media/logo2.png" type="image/x-icon" />
+    <title>SBO Hub</title>
+
+    <link rel="stylesheet" href="./../style/root.css" />
+    <link rel="stylesheet" href="./../style/dashboard.css" />
+    <link rel="stylesheet" href="./../style/admin-dashboard.css" />
+  </head>
+  <body>
+    <main class="container">
+      <aside class="sidebar">
+        <div class="profile">
+          <img src="./../media/logo1.png" alt="" />
+
+          <div>
+            <h2>Admin</h2>
+          </div>
+        </div>
+
+        <nav id="navbar">
+          <div class="nav-button">
+            <img src="./../media/home.png" alt="" />
+            <p>Home</p>
+          </div>
+
+          <div class="nav-button">
+            <img src="./../media/event.png" alt="" />
+            <p>Events</p>
+          </div>
+
+          <div class="nav-button">
+            <img src="./../media/complaints.png" alt="" />
+            <p>Complaints</p>
+          </div>
+
+          <div class="nav-button">
+            <img src="./../media/logs.png" alt="" />
+            <p>Student Logs</p>
+          </div>
+        </nav>
+
+        <div class="logout" id="logout-btn">
+          <img src="./../media/logout.png" alt="" />
+          <p>Log out</p>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <section class="home" id="home">
+          <h1>SBO Community</h1>
+
+          <button class="new-post">New Post</button>
+
+          <section class="post-container"></section>
+        </section>
+
+        <section class="events active" id="events">
+          <h1>Events</h1>
+
+          <button class="new-event">New Event</button>
+
+          <section class="event-container"></section>
+        </section>
+
+        <section class="complaints active" id="complaints">
+          <h1>Complaints</h1>
+
+          <section class="complaints-container"></section>
+        </section>
+
+        <section class="logs active" id="logs">
+          <h1>Student Login Logs</h1>
+
+          <div class="logs-controls">
+            <select id="filter-course">
+              <option value="all">All Courses</option>
+              <option value="BSIT">BSIT</option>
+              <option value="BSCS">BSCS</option>
+              <option value="BSIS">BSIS</option>
+            </select>
+            <input type="text" id="search-input" placeholder="Search by student number or name" />
+          </div>
+
+          <section class="logs-container">
+            <table id="logs-table">
+              <thead>
+                <tr>
+                  <th>Student No.</th>
+                  <th>Username</th>
+                  <th>Course</th>
+                  <th>Year & Section</th>
+                  <th>Login Time</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </section>
+        </section>
+      </main>
+    </main>
+
+    <div class="modal hidden" id="post-modal">
+      <div class="modal-content">
+        <h2>Create New Post</h2>
+        <label>Text Content:</label>
+        <textarea rows="4" id="post-text"></textarea>
+
+        <label>Upload Image:</label>
+        <input required type="file" id="post-image" accept="image/*" />
+
+        <div class="modal-actions">
+          <button class="modal-close">Cancel</button>
+          <button class="modal-save">Post</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal hidden" id="event-modal">
+      <div class="modal-content">
+        <h2>Create New Event</h2>
+
+        <label>Title:</label>
+        <input required type="text" id="event-title" />
+
+        <label>Date:</label>
+        <input required type="date" id="event-date" />
+
+        <label>Start Time:</label>
+        <input required type="time" id="event-start" />
+
+        <label>End Time:</label>
+        <input required type="time" id="event-end" />
+
+        <label>Description:</label>
+        <textarea rows="3" id="event-description"></textarea>
+
+        <label>Location:</label>
+        <input required type="text" id="event-location" />
+
+        <label>Attendance Google Form link:</label>
+        <input required type="text" id="event-gform" />
+
+        <div class="modal-actions">
+          <button class="modal-close">Cancel</button>
+          <button class="modal-save">Add Event</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="view-feedback-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3 id="view-feedback-title">Feedbacks</h3>
+        <div id="feedback-list"></div>
+        <div class="modal-actions">
+          <button id="close-view-feedback">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FIREBASE IMPORT -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js"></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js"
+    ></script>
+
+    <script type="module" src="./../script/admin-dashboard.js" defer></script>
+  </body>
+</html>
